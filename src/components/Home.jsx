@@ -34,6 +34,24 @@ function Home({ newdoctor }) {
         specialization: "Heart",
         salary: 5000000,
       },
+
+      {
+        id: 4,
+        name: "Tejaswini",
+        age: 25,
+        gender: "Female",
+        specialization: "Bones",
+        salary: 5000000,
+      },
+
+      {
+        id: 5,
+        name: "Saila",
+        age: 25,
+        gender: "Female",
+        specialization: "Heart",
+        salary: 6000000,
+      },
     ];
 
     setDoctors(data);
