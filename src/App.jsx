@@ -4,7 +4,7 @@ import './components/styles.css'
 import Addnewdoctor from "./components/Addnewdoctor"
 import { Route, Routes } from "react-router-dom"
 import Doctordetails from "./components/Doctordetails"
-import Footer from "./components/Footer";
+import Footer from "./components/footer";
 
 function App(){
   return (
