@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import Doctorcard from "./Doctorcard";
 function Home({ newdoctor }) {
@@ -109,6 +108,7 @@ function Home({ newdoctor }) {
                 gender={doctor.gender}
                 specialization={doctor.specialization}
                 salary={doctor.salary}
+                id = {doctor.id}
               />
             );
           })}

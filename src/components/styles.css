@@ -4,11 +4,29 @@
     box-sizing:border-box;
 }
 
+body{
+    background: linear-gradient(
+        to bottom,
+        #0740A7,
+        #0557BB,
+        #026FCE
+        );
+    min-height:100vh;
+}
+
+#root{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+}
+
+/* Header */
+
 header{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    background:blueviolet;
+    background:navy;
     padding:20px 30px;
     color:white;
     font-weight:900;
@@ -30,6 +48,7 @@ button{
     background:blueviolet;
     color:white;
     font-size:3rem;
+    min-height:70vh;
 }
 
 .s1 > div{
@@ -45,6 +64,7 @@ button{
 /* Doctor Cards */
 
 .card{
+    background:white;
     box-shadow:0px 0px 2px 2px black;
     padding:15px;
     text-align:center;
@@ -86,7 +106,7 @@ button{
     flex-wrap:wrap;
     gap:8px;
     justify-content:center;
-    margin:20px;
+    padding:20px;
 }
 
 .doctorparent > div{
@@ -100,6 +120,7 @@ button{
     margin:auto;
     border:2px solid black;
     padding:20px;
+    background:white;
 }
 
 .form-container h1{
@@ -107,7 +128,9 @@ button{
     margin-bottom:15px;
 }
 
-.text-field, select,.form-container button{
+.text-field,
+select,
+.form-container button{
     display:block;
     width:100%;
     padding:10px;
@@ -118,6 +141,22 @@ button{
     background:black;
     color:white;
     border:none;
+}
+
+/* Footer */
+
+.footer{
+    background: navy;
+    color:white;
+    text-align:center;
+    padding:30px 20px;
+    margin-top:auto;
+    border-top:1px solid rgba(255,255,255,0.3);
+}
+
+.footer p{
+    margin:5px 0;
+    font-size: 20px;
 }
 
 /* Responsive */
@@ -132,6 +171,7 @@ button{
     .s1{
         flex-direction:column;
         text-align:center;
+        font-size:2rem;
     }
 
     .doctorparent > div{
@@ -143,3 +183,31 @@ button{
     }
 }
 
+.doctor-details{
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background: #0d4fb3;
+    color: white;
+}
+
+.doctor-details h1{
+    margin-bottom: 20px;
+    font-size: 60px;
+}
+
+.doctor-details h2,
+.doctor-details h3{
+    margin: 8px 0;
+    font-size: 30px;
+}
+
+.add-new-doctor h1{
+    margin: 8px 8px;
+    font-size: 40px;
+    color:black
+}

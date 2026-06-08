@@ -4,10 +4,10 @@ function Navbar() {
   let navigate=useNavigate()
   return (
     <header>
-        <h1>Doctor app</h1>
+        <h1>DOCTOR APP </h1>
         <div>
             <button onClick={()=>navigate('/')}>Home</button>
-            <button onClick={()=>navigate('/add-doctor')}>Home</button>
+            <button onClick={()=>navigate('/add-doctor')}>Add New Doctor</button>
 
         </div>
     </header>

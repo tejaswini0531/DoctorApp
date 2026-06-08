@@ -1,15 +1,22 @@
-import React from 'react'
-
 function Section() {
   return (
-    <section className='s1'>
-     <div>
-        <h1>Mr. Doctor app</h1>
-        <p>Find your doctors for your problems</p>
-    </div>    
-     <div><img  src="https://img.magnific.com/free-photo/beautiful-house-with-nature-elements_23-2151848749.jpg?t=st=1780014392~exp=1780017992~hmac=782b6affb0beb13b8285941d8db80fcbdfd5decb01564b7fe4fcc878a146b417" alt="" /></div>    
+    <section
+      className="s1"
+      style={{
+        backgroundImage:
+          'url("https://img.magnific.com/free-vector/digital-health-medical-research-background-with-heartbeat-line_1017-50392.jpg?semt=ais_hybrid&w=740&q=80")',
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        minHeight: "80vh",
+      }}
+    >
+      <div>
+        <h1>Mr. Doctor</h1>
+        <p>Find your doctors for your problems.</p>
+      </div>
     </section>
-  )
+  );
 }
 
-export default Section
+export default Section;

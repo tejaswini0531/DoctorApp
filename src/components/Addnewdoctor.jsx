@@ -19,8 +19,8 @@ function Addnewdoctor() {
   }
   
   return (
-    <div >
-      <h1 style={{textAlign:'center'}}>Add New Doctor</h1>
+    <div className ="add-new-doctor" >
+      <h1 style={{textAlign:'center'}}>ADD NEW DOCTOR</h1>
       <form action="" className='form-container' onSubmit={handlesubmit}>
         <input value={name} onChange={(e)=>setName(e.target.value)} type="text" placeholder='Enter Doctor Name' className='text-field'/>
         <input value={age} onChange={(e)=>setAge(e.target.value)} type="text" placeholder='Enter Age' className='text-field'/>

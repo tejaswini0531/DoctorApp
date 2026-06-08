@@ -1,18 +1,21 @@
-// import { useState } from "react"
 import Navbar from "./components/Navbar"
 import Section from "./components/Section"
 import './components/styles.css'
 import Addnewdoctor from "./components/Addnewdoctor"
 import { Route, Routes } from "react-router-dom"
+import Doctordetails from "./components/Doctordetails"
+import Footer from "./components/Footer";
 
 function App(){
   return (
    <div>
     <Navbar/>
     <Routes>
-      <Route path='/' element={<section/>}/>
+      <Route path='/' element={<Section/>}/>
       <Route path='/add-doctor' element={<Addnewdoctor/>}/>
+      <Route path='/doctor/:id'element={<Doctordetails/>}/>
     </Routes>
+    <Footer/>
    </div>
   )
 }

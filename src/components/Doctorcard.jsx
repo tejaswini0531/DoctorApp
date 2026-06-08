@@ -1,4 +1,6 @@
-function Doctorcard({ name, specialization, gender, salary }) {
+import { useNavigate } from "react-router-dom"
+function Doctorcard({ name, specialization, gender, salary, id }) {
+  let navigate=useNavigate()
   return (
     <div className="card">
       <div>
@@ -18,7 +20,9 @@ function Doctorcard({ name, specialization, gender, salary }) {
       <p>Gender: {gender}</p>
       <p>Salary: ₹{salary ? salary.toLocaleString() : 0}</p>
 
-      <button>View Details</button>
+      <button onClick={()=>navigate(`/doctor/${id}`)}>View Details</button>
+
+
     </div>
   )
 }
