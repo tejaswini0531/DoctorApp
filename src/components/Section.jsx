@@ -1,7 +1,6 @@
 function Section() {
   return (
-    <section
-      className="s1"
+    <section className="s1" 
       style={{
         backgroundImage:
           'url("https://img.magnific.com/free-vector/digital-health-medical-research-background-with-heartbeat-line_1017-50392.jpg?semt=ais_hybrid&w=740&q=80")',

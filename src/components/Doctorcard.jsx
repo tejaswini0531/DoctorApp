@@ -1,6 +1,11 @@
 import { useNavigate } from "react-router-dom"
-function Doctorcard({ name, specialization, gender, salary, id }) {
+import { DoctorContext } from "./DoctorProvider.jsx";
+import { useContext } from "react";
+
+function Doctorcard({ name, specialization, gender, salary, id}) {
   let navigate=useNavigate()
+  let {updatedata,deletedata}=useContext(DoctorContext)
+
   return (
     <div className="card">
       <div>
@@ -21,7 +26,10 @@ function Doctorcard({ name, specialization, gender, salary, id }) {
       <p>Salary: ₹{salary ? salary.toLocaleString() : 0}</p>
 
       <button onClick={()=>navigate(`/doctor/${id}`)}>View Details</button>
+      <button onClick={()=>{deletedata(id)}}>Del</button>
+      <button onClick={()=>updatedata(id)}>update</button>
 
+      {/* <button onClick={() => navigate(`/update/${id}`)}> Upd</button> */}
 
     </div>
   )

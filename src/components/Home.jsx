@@ -1,80 +1,48 @@
 import { useState, useEffect } from "react";
 import Doctorcard from "./Doctorcard";
-function Home({ newdoctor }) {
+import axios from "axios";
+import { useMemo } from "react";
+import { DoctorContext } from "./DoctorProvider.jsx";
+import { useContext } from "react";
+
+function Home() {
   let [doctors, setDoctors] = useState([]);
   let [search, setSearch] = useState("");
   let [specialization, setSpecialization] = useState("");
-
-  function fetchdata() {
-    let data = [
-      {
-        id: 1,
-        name: "Teja",
-        age: 26,
-        gender: "Male",
-        specialization: "Muscles",
-        salary: 7000000,
-      },
-
-      {
-        id: 2,
-        name: "Sam",
-        age: 26,
-        gender: "Male",
-        specialization: "Bones",
-        salary: 4000000,
-      },
-
-      {
-        id: 3,
-        name: "Anu",
-        age: 25,
-        gender: "Female",
-        specialization: "Heart",
-        salary: 5000000,
-      },
-
-      {
-        id: 4,
-        name: "Tejaswini",
-        age: 25,
-        gender: "Female",
-        specialization: "Bones",
-        salary: 5000000,
-      },
-
-      {
-        id: 5,
-        name: "Saila",
-        age: 25,
-        gender: "Female",
-        specialization: "Heart",
-        salary: 6000000,
-      },
-    ];
-
-    setDoctors(data);
+   let {newdoctor} = useContext(DoctorContext)
+  async function fetchdata() {
+   try{
+    let apidata=await axios.get('https://doc-back.onrender.com/doctors')
+    // console.log(apidata)
+    setDoctors(apidata.data);
+  }catch(err){
+    alert('failed')
+    console.log(err,'api is failed to fetch')
   }
+}
+
+  // useEffect(() => {
+  //   fetchdata();
+  // }, []);
 
   useEffect(() => {
-    fetchdata();
-  }, []);
-
-  useEffect(() => {
-    if (newdoctor) {
-      setDoctors((prev) => [...prev, newdoctor]);
-    }
+     // eslint-disable-next-line react-hooks/set-state-in-effect
+     fetchdata()
   }, [newdoctor]);
 
-  const filtereddoctors=doctors.filter((val)=>{
-    console.log()
-    console.log(search)
+
+  const filtereddoctors=useMemo(()=>{
+    return doctors.filter((val)=>{
+    console.log('running')
     return (
       val.name.toLowerCase().includes(search.toLowerCase())
       &&
       (specialization=="" || val.specialization==specialization)
     )
   })
+
+},[search,specialization,doctors])
+
   return (
     <div>
       <div className="filters">
@@ -105,6 +73,7 @@ function Home({ newdoctor }) {
               <Doctorcard
                 key={doctor.id}
                 name={doctor.name}
+                age={doctor.age}
                 gender={doctor.gender}
                 specialization={doctor.specialization}
                 salary={doctor.salary}
